@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {ApolloProvider} from "react-apollo";
+import ApolloClient from "apollo-boost";
 import * as serviceWorker from './serviceWorker';
 
+const client = new ApolloClient({uri: "https://api-eu-central-1.graphcms.com/v2/ck9gqih1j0c2z01wa1nsa90xe/master"})
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <ApolloProvider client={client}>
+        <App/>
+    </ApolloProvider>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
