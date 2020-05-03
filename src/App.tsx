@@ -28,7 +28,7 @@ function App() {
           return (
             <div className="section">
               {entries.map((entry: any) => (
-                <Entry key={entry.id} />
+                <Entry key={entry.id} data={entry} />
               ))}
             </div>
           );
